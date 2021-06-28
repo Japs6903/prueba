@@ -21,6 +21,11 @@ SET time_zone = "+00:00";
 -- Base de datos: `suremanagement`
 --
 
+#DROP DATABASE suremanagement;
+
+CREATE DATABASE suremanagement;
+USE suremanagement;
+
 -- --------------------------------------------------------
 
 --
@@ -52,8 +57,7 @@ CREATE TABLE `inmuebles_arriendo` (
 -- Volcado de datos para la tabla `inmuebles_arriendo`
 --
 
-INSERT INTO `inmuebles_arriendo` (`id_inmueble`, `direccion`, `complemento`, `valor`, `fecha_pago`, `id_propietario`) VALUES
-(1, 'Calle 109 # 102-45', 'Casa, segundo piso', 2200000, '2021-06-27', 2);
+
 
 -- --------------------------------------------------------
 
@@ -73,12 +77,7 @@ CREATE TABLE `propietarios` (
 -- Volcado de datos para la tabla `propietarios`
 --
 
-INSERT INTO `propietarios` (`id_propietario`, `nombres`, `apellidos`, `telefono`, `correo`) VALUES
-(1, 'mauro andres', 'hernandez', 3116805444, 'mateoro@gmail.com'),
-(2, 'mauro', 'hernandez', 3116805455, 'mateoroeore@gmail.com'),
-(3, 'marcos', 'garza', 3116805455, 'mate4131312e@gmail.com'),
-(5, 'MATEO', 'ROMERO', 3116806341, 'mateoronorbit@gmail.com'),
-(7, 'Alejandro', 'Rodriguez', 333333333, 'jro@gmail.com');
+
 
 -- --------------------------------------------------------
 
@@ -99,19 +98,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombres`, `apellidos`, `usuario`, `contraseña`, `email`) VALUES
-(65, 'Fabio', 'Hernando', 'admin', 'admin', 'mateoronorbit@gmail.com'),
-(67, 'MATEO ALEXANDER', 'ROMERO CORTES', '32323232', '32323232', 'mateoronorbit@gmail.com'),
-(68, 'MATEO ALEXANDER', 'ROMERO CORTES', '545454', '545454', 'mateoronorbit@gmail.com'),
-(69, 'MATEO ALEXANDER', 'ROMERO CORTES', '66666666', '99999', 'mateoronorbit@gmail.com'),
-(71, 'Samuel', 'Leon', 'saleon', 'saleon', 'saleon@gmail.com'),
-(72, 'James', 'Rodriguez', 'jaja10', 'jaja10', 'mateore312312@gmail.com'),
-(73, '5', '5', '5', '5', '5@daasd'),
-(74, '653', '3654', '6354', '6345', '364@dasdadas'),
-(75, '312312', '312312', '312312321', '3123123', '312312@adads'),
-(76, 'Alejandro', 'Cepeda', 'Alejo3032', 'mmmmm', 'alej@gmail.com'),
-(78, 'MATEO ALEXANDER', 'ROMERO CORTES', 'Mateo1010', '323131313123', 'mateoronorbit@gmail.com'),
-(79, 'MATEO ALEXANDER ROMERO CORTES', '123213123', '1233123', '1312312312', 'mateoronorbit@gmail.com');
+
 
 --
 -- Índices para tablas volcadas
@@ -133,6 +120,12 @@ ALTER TABLE `propietarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
+  
+--
+-- Indices de la tabla 'inmuebles_arriendo'
+--
+ALTER TABLE `inmuebles_arriendo`
+  ADD PRIMARY KEY (`id_inmueble`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -166,6 +159,35 @@ ALTER TABLE `usuarios`
 ALTER TABLE `inmuebles_arriendo`
   ADD CONSTRAINT `inmuebles_arriendo_ibfk_1` FOREIGN KEY (`id_propietario`) REFERENCES `propietarios` (`id_propietario`);
 COMMIT;
+
+
+--
+-- Inserción de tablas
+--
+
+INSERT INTO `propietarios` (`id_propietario`, `nombres`, `apellidos`, `telefono`, `correo`) VALUES
+(1, 'mauro andres', 'hernandez', 3116805444, 'mateoro@gmail.com'),
+(2, 'mauro', 'hernandez', 3116805455, 'mateoroeore@gmail.com'),
+(3, 'marcos', 'garza', 3116805455, 'mate4131312e@gmail.com'),
+(5, 'MATEO', 'ROMERO', 3116806341, 'mateoronorbit@gmail.com'),
+(7, 'Alejandro', 'Rodriguez', 333333333, 'jro@gmail.com');
+
+INSERT INTO `usuarios` (`id_usuario`, `nombres`, `apellidos`, `usuario`, `contraseña`, `email`) VALUES
+(65, 'Fabio', 'Hernando', 'admin', 'admin', 'mateoronorbit@gmail.com'),
+(67, 'MATEO ALEXANDER', 'ROMERO CORTES', '32323232', '32323232', 'mateoronorbit@gmail.com'),
+(68, 'MATEO ALEXANDER', 'ROMERO CORTES', '545454', '545454', 'mateoronorbit@gmail.com'),
+(69, 'MATEO ALEXANDER', 'ROMERO CORTES', '66666666', '99999', 'mateoronorbit@gmail.com'),
+(71, 'Samuel', 'Leon', 'saleon', 'saleon', 'saleon@gmail.com'),
+(72, 'James', 'Rodriguez', 'jaja10', 'jaja10', 'mateore312312@gmail.com'),
+(73, '5', '5', '5', '5', '5@daasd'),
+(74, '653', '3654', '6354', '6345', '364@dasdadas'),
+(75, '312312', '312312', '312312321', '3123123', '312312@adads'),
+(76, 'Alejandro', 'Cepeda', 'Alejo3032', 'mmmmm', 'alej@gmail.com'),
+(78, 'MATEO ALEXANDER', 'ROMERO CORTES', 'Mateo1010', '323131313123', 'mateoronorbit@gmail.com'),
+(79, 'MATEO ALEXANDER ROMERO CORTES', '123213123', '1233123', '1312312312', 'mateoronorbit@gmail.com');
+
+INSERT INTO `inmuebles_arriendo` (`id_inmueble`, `direccion`, `complemento`, `valor`, `fecha_pago`, `id_propietario`) VALUES
+(1, 'Calle 109 # 102-45', 'Casa, segundo piso', 2200000, '2021-06-27', 2);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
