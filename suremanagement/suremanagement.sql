@@ -179,9 +179,6 @@ INSERT INTO `usuarios` (`id_usuario`, `nombres`, `apellidos`, `usuario`, `contra
 (69, 'MATEO ALEXANDER', 'ROMERO CORTES', '66666666', '99999', 'mateoronorbit@gmail.com'),
 (71, 'Samuel', 'Leon', 'saleon', 'saleon', 'saleon@gmail.com'),
 (72, 'James', 'Rodriguez', 'jaja10', 'jaja10', 'mateore312312@gmail.com'),
-(73, '5', '5', '5', '5', '5@daasd'),
-(74, '653', '3654', '6354', '6345', '364@dasdadas'),
-(75, '312312', '312312', '312312321', '3123123', '312312@adads'),
 (76, 'Alejandro', 'Cepeda', 'Alejo3032', 'mmmmm', 'alej@gmail.com'),
 (78, 'MATEO ALEXANDER', 'ROMERO CORTES', 'Mateo1010', '323131313123', 'mateoronorbit@gmail.com'),
 (79, 'MATEO ALEXANDER ROMERO CORTES', '123213123', '1233123', '1312312312', 'mateoronorbit@gmail.com');
@@ -192,3 +189,4 @@ INSERT INTO `inmuebles_arriendo` (`id_inmueble`, `direccion`, `complemento`, `va
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
